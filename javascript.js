@@ -1,18 +1,36 @@
 const container = document.querySelector('#grid-container');
-const gridSize = 16;
+const button = document.querySelector('button');
 
-for (let i = 0; i < gridSize * gridSize; i++) {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
+function createGrid(gridSize) {
+    container.innerHTML = '';
+    const cellSize = container.offsetWidth /gridSize;
 
-    container.appendChild(cell);
+    for (let i = 0; i < gridSize * gridSize; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+
+        cell.style.width = `${cellSize}px`;
+        cell.style.height = `${cellSize}px`;
+
+        cell.addEventListener('mouseenter', () =>{
+            cell.classList.add('hover-effect');
+        });
+
+        container.appendChild(cell);
+    }
 }
+createGrid(16); //Initialize grid with default size
 
-//hover effect
-const cells = document.querySelectorAll('.cell');
 
-cells.forEach(cell => {
-    cell.addEventListener("mouseenter", () => {
-        cell.classList.add('hover-effect');
-    });
-});
+//initialize button
+button.onclick = resetGame;
+
+function resetGame() {
+   let newGridSize = Number(prompt('What size do you want the grid to be? (max: 100'));
+
+   if (newGridSize <= 100 && newGridSize > 0) {
+    createGrid(newGridSize);
+   } else {
+    alert('invalid selection. Please enter a number between 1 and 100');
+   };
+}

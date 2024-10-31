@@ -1,9 +1,11 @@
 body {
     display: flex;
+    flex-direction: column;
+    gap: 16px;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin-top: 8px;
     background-color: darkgrey;
 }
 
@@ -16,8 +18,7 @@ body {
 }
 
 .cell {
-    flex: 1 0 6.25%; /* 100 / 16 = 6.25 */
-    height: 6.25%;
+    flex: 1 0 auto;
     box-sizing: border-box;
     border: 1px solid black;
     transition: transform 0s ease;
@@ -28,4 +29,22 @@ body {
 .hover-effect {
     background-color: orange;
     transition-delay: 1s;
+}
+
+/* Button Styling */
+
+button {
+    width: fit-content;
+    height: fit-content;
+    background-color: black;
+    color: orange;
+    border-radius: 8px;
+    border: 0px;
+    padding: 8px 32px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button:hover {
+    color: black;
+    background-color: orange;
 }
