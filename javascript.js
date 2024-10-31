@@ -7,3 +7,12 @@ for (let i = 0; i < gridSize * gridSize; i++) {
 
     container.appendChild(cell);
 }
+
+//hover effect
+const cells = document.querySelectorAll('.cell');
+
+cells.forEach(cell => {
+    cell.addEventListener("mouseenter", () => {
+        cell.classList.add('hover-effect');
+    });
+});

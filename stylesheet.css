@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f2f2f2;
+    background-color: darkgrey;
 }
 
 #grid-container {
@@ -20,4 +20,12 @@ body {
     height: 6.25%;
     box-sizing: border-box;
     border: 1px solid black;
+    transition: transform 0s ease;
+}
+
+/* Hover effect */
+
+.hover-effect {
+    background-color: orange;
+    transition-delay: 1s;
 }
