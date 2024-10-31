@@ -1,6 +1,13 @@
 const container = document.querySelector('#grid-container');
 const button = document.querySelector('button');
 
+function rgbColorGenerator() {
+    const r = Math.floor(Math.random() * 56) + 200;
+    const g = Math.floor(Math.random() * 156) + 100;
+    const b = Math.floor(Math.random() * 30);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 function createGrid(gridSize) {
     container.innerHTML = '';
     const cellSize = container.offsetWidth /gridSize;
@@ -11,16 +18,24 @@ function createGrid(gridSize) {
 
         cell.style.width = `${cellSize}px`;
         cell.style.height = `${cellSize}px`;
+        cell.style.opacity = '1.0';
 
         cell.addEventListener('mouseenter', () =>{
-            cell.classList.add('hover-effect');
+            let currentOpacity = parseFloat(cell.style.opacity);
+
+            if (currentOpacity > 0) {
+                cell.style.opacity = (currentOpacity - 0.1).toFixed(1);
+            }
+
+            cell.style.transition = "background-color 0.1s";
+            cell.style.backgroundColor = rgbColorGenerator();
+
         });
 
         container.appendChild(cell);
     }
 }
 createGrid(16); //Initialize grid with default size
-
 
 //initialize button
 button.onclick = resetGame;

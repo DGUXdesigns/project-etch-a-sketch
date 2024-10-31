@@ -18,17 +18,10 @@ body {
 }
 
 .cell {
-    flex: 1 0 auto;
+    flex: 1 0 auto; /* 100 / 16 = 6.25 */
     box-sizing: border-box;
     border: 1px solid black;
     transition: transform 0s ease;
-}
-
-/* Hover effect */
-
-.hover-effect {
-    background-color: orange;
-    transition-delay: 1s;
 }
 
 /* Button Styling */
