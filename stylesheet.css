@@ -1,10 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: column;
     gap: 16px;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin-top: 8px;
     background-color: darkgrey;
 }
@@ -12,15 +15,15 @@ body {
 #grid-container {
     display: flex;
     flex-wrap: wrap;
-    width: 800px;
-    height: 800px;
-    border: 1px solid black;
+    width: 98vw;
+    height: 98vw;
+    /* border: 1px solid black; */
 }
 
 .cell {
     flex: 1 0 auto;
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     transition: transform 0s ease;
 }
 

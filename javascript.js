@@ -18,7 +18,7 @@ function createGrid(gridSize) {
 
         cell.style.width = `${cellSize}px`;
         cell.style.height = `${cellSize}px`;
-        cell.style.opacity = '1.0';
+        cell.style.opacity = '1';
 
         cell.addEventListener('mouseenter', () =>{
             let currentOpacity = parseFloat(cell.style.opacity);
